@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!doctype doctype>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Salma Sabila</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffd1dc 0%, #ffe4e9 50%, #fff0f3 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .cv-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Dekorasi lucu */
+        .cv-wrapper::before {
+            content: '🌸';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cv-wrapper::after {
+            content: '✨';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 35px;
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffc9d4 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            left: -50px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 28px;
+            color: #ff69b4;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ffb6c1;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        /* Contact Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: #fff0f3;
+            padding: 15px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 24px;
+        }
+
+        .contact-text {
+            font-size: 14px;
+            color: #666;
+            word-break: break-word;
+        }
+
+        /* About Section */
+        .about-text {
+            background: #ffe4e9;
+            padding: 25px;
+            border-radius: 20px;
+            line-height: 1.8;
+            color: #555;
+            font-size: 15px;
+            border-left: 5px solid #ffb6c1;
+        }
+
+        /* Timeline (Education) */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ffb6c1, #ffd1dc);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 25px;
+        }
+
+        .timeline-item::before {
+            content: '🎓';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 20px;
+            background: white;
+            padding: 3px;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            background: #fff0f3;
+            padding: 15px 20px;
+            border-radius: 15px;
+        }
+
+        .timeline-year {
+            font-size: 13px;
+            color: #ff69b4;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #ffe4e9, #fff0f3);
+            padding: 15px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-item::before {
+            content: '💖';
+            font-size: 18px;
+        }
+
+        /* Experience */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .experience-item {
+            background: #ffe4e9;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #ffb6c1;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #ff69b4;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        /* Certificates */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cert-item {
+            background: #fff0f3;
+            padding: 15px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cert-item::before {
+            content: '🏆';
+            font-size: 24px;
+        }
+
+        .cert-text {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Languages & Hobbies */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #ffb6c1, #ffc9d4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #fff0f3;
+            color: #ff69b4;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="cv-wrapper"><!-- Header -->
+    <div class="header">
+     <div class="profile-photo">
+      👧🏻
+     </div>
+     <h1 class="name" id="fullName">Salma Sabila</h1>
+     <p class="tagline" id="tagline">Pelajar yang Tekun &amp; Bersemangat ✨</p>
+    </div><!-- Content -->
+    <div class="content"><!-- Contact Information -->
+     <div class="section">
+      <h2 class="section-title">📞 Kontak</h2>
+      <div class="contact-grid">
+       <div class="contact-item"><span class="contact-icon">🎂</span> <span class="contact-text">Lahir tahun 2008</span>
+       </div>
+       <div class="contact-item"><span class="contact-icon">📧</span> <span class="contact-text">salmasalsabilla0880@gmail.com</span>
+       </div>
+       <div class="contact-item"><span class="contact-icon">📱</span> <span class="contact-text">081324151678</span>
+       </div>
+       <div class="contact-item"><span class="contact-icon">📷</span> <span class="contact-text">@sallmmbbila</span>
+       </div>
+       <div class="contact-item"><span class="contact-icon">🏠</span> <span class="contact-text">Ciparay, Bandung</span>
+       </div>
+      </div>
+     </div><!-- About -->
+     <div class="section">
+      <h2 class="section-title">💫 Tentang Saya</h2>
+      <div class="about-text" id="aboutText">
+       Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.
+      </div>
+     </div><!-- Education -->
+     <div class="section">
+      <h2 class="section-title">📚 Pendidikan</h2>
+      <div class="timeline">
+       <div class="timeline-item">
+        <div class="timeline-content">
+         <div class="timeline-year">
+          2023 - 2026
+         </div>
+         <div class="timeline-title">
+          SMA KP BALEENDAH
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-content">
+         <div class="timeline-year">
+          2020 - 2022
+         </div>
+         <div class="timeline-title">
+          MTsN 1 BANDUNG
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-content">
+         <div class="timeline-year">
+          2014 - 2019
+         </div>
+         <div class="timeline-title">
+          SDN 3 GUNUNGLEUTIK
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Skills -->
+     <div class="section">
+      <h2 class="section-title">⭐ Keahlian</h2>
+      <div class="skills-grid">
+       <div class="skill-item">
+        Komunikasi yang baik
+       </div>
+       <div class="skill-item">
+        Manajemen waktu
+       </div>
+       <div class="skill-item">
+        Kerja sama tim
+       </div>
+       <div class="skill-item">
+        Bekerja mandiri
+       </div>
+      </div>
+     </div><!-- Experience -->
+     <div class="section">
+      <h2 class="section-title">🌟 Pengalaman Organisasi</h2>
+      <div class="experience-list">
+       <div class="experience-item">
+        <div class="experience-title">
+         Ketua Ekstrakurikuler Karate
+        </div>
+        <div>
+         MTsN 1 Bandung
+        </div>
+       </div>
+       <div class="experience-item">
+        <div class="experience-title">
+         Anggota OSIS
+        </div>
+        <div>
+         SMA KP BALEENDAH
+        </div>
+       </div>
+       <div class="experience-item">
+        <div class="experience-title">
+         Sekretaris Katar 03
+        </div>
+        <div>
+         SMA KP BALEENDAH
+        </div>
+       </div>
+      </div>
+     </div><!-- Certificates -->
+     <div class="section">
+      <h2 class="section-title">🏅 Sertifikat &amp; Prestasi</h2>
+      <div class="cert-list">
+       <div class="cert-item"><span class="cert-text">Juara 2 Lomba Puisi</span>
+       </div>
+       <div class="cert-item"><span class="cert-text">Juara Harapan 3 Lomba Karate</span>
+       </div>
+       <div class="cert-item"><span class="cert-text">Hafalan Juz 30</span>
+       </div>
+      </div>
+     </div><!-- Languages -->
+     <div class="section">
+      <h2 class="section-title">🗣️ Bahasa</h2>
+      <div class="tag-container">
+       <div class="tag">
+        Bahasa Indonesia
+       </div>
+       <div class="tag">
+        Bahasa Inggris
+       </div>
+      </div>
+     </div><!-- Hobbies -->
+     <div class="section">
+      <h2 class="section-title">🎨 Hobi</h2>
+      <div class="tag-container">
+       <div class="tag">
+        🍳 Memasak
+       </div>
+       <div class="tag">
+        📺 Menonton
+       </div>
+      </div>
+     </div>
+    </div><!-- Footer -->
+    <div class="footer">
+     Terima kasih sudah melihat CV saya! 💕
+    </div>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            full_name: "Salma Sabila",
+            tagline: "Pelajar yang Tekun & Bersemangat ✨",
+            about_text: "Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.",
+            primary_color: "#ffb6c1",
+            secondary_color: "#ffe4e9",
+            text_color: "#555555",
+            accent_color: "#ff69b4",
+            background_color: "#fff0f3"
+        };
+
+        async function onConfigChange(config) {
+            const fullName = config.full_name || defaultConfig.full_name;
+            const tagline = config.tagline || defaultConfig.tagline;
+            const aboutText = config.about_text || defaultConfig.about_text;
+
+            document.getElementById('fullName').textContent = fullName;
+            document.getElementById('tagline').textContent = tagline;
+            document.getElementById('aboutText').textContent = aboutText;
+
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+
+            document.querySelector('.header').style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 100%)`;
+            document.querySelectorAll('.section-title').forEach(el => el.style.color = accentColor);
+            document.querySelectorAll('.contact-item').forEach(el => el.style.background = secondaryColor);
+            document.querySelector('.about-text').forEach(el => {
+                el.style.background = secondaryColor;
+                el.style.borderLeftColor = primaryColor;
+            });
+            document.querySelectorAll('.timeline-content, .skill-item, .experience-item, .cert-item').forEach(el => el.style.background = secondaryColor);
+            document.querySelectorAll('.tag').forEach(el => el.style.background = `linear-gradient(135deg, ${primaryColor}, ${primaryColor}dd)`);
+            document.querySelector('.footer').style.background = backgroundColor;
+            document.querySelector('.footer').style.color = accentColor;
+            document.querySelectorAll('.contact-text, .about-text, .cert-text').forEach(el => el.style.color = textColor);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.primary_color || defaultConfig.primary_color,
+                            set: (value) => {
+                                config.primary_color = value;
+                                window.elementSdk.setConfig({ primary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_color || defaultConfig.secondary_color,
+                            set: (value) => {
+                                config.secondary_color = value;
+                                window.elementSdk.setConfig({ secondary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["full_name", config.full_name || defaultConfig.full_name],
+                    ["tagline", config.tagline || defaultConfig.tagline],
+                    ["about_text", config.about_text || defaultConfig.about_text]
+                ])
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c55deea03d90ad8',t:'MTc2OTY1OTczMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+</body>
+</html>
