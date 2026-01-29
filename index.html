@@ -2,367 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Salma Salsabilla - Kreatif & Ceria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>CV Salma Sabila - Soft Pink Edition</title>
     <style>
-        /* General Styles & Reset */
+        :root {
+            --soft-pink: #fce4ec;
+            --medium-pink: #f8bbd0;
+            --dark-pink: #ec407a;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #ffeef2; /* Soft pink background */
+            background-color: #fff5f7;
+            color: var(--text-color);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* CV Container */
         .cv-container {
             width: 100%;
-            max-width: 900px;
-            background: #fff;
-            border-radius: 20px; /* Rounded corners for a softer look */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+            background: var(--white);
             display: flex;
+            border-radius: 25px;
             overflow: hidden;
-            flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+            box-shadow: 0 15px 35px rgba(236, 64, 122, 0.15);
         }
 
-        /* Left Sidebar (Kiri) */
-        .cv-left {
+        /* Sidebar */
+        .sidebar {
             width: 35%;
-            background-color: #87CEEB; /* Sky blue */
-            padding: 40px 30px;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            overflow: hidden; /* For decorative elements */
-        }
-
-        /* Decorative Elements for "lucu" look */
-        .cv-left::before {
-            content: '⭐';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 2em;
-            opacity: 0.5;
-        }
-        .cv-left::after {
-            content: '🌈';
-            position: absolute;
-            bottom: 30px;
-            right: 20px;
-            font-size: 2.5em;
-            opacity: 0.6;
-        }
-
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #FFD700; /* Gold border */
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .name {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .tagline {
-            font-size: 1em;
-            font-weight: 600;
-            color: #ecf0f1;
-            margin-bottom: 30px;
-        }
-
-        .contact-info ul {
-            list-style: none;
-            text-align: left;
-            margin-top: 20px;
-            border-top: 2px dashed #fff; /* Dotted line separator */
-            padding-top: 20px;
-        }
-        .contact-info li {
-            margin-bottom: 15px;
-            font-size: 0.95em;
+            background-color: var(--soft-pink);
+            padding: 40px 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
-        .contact-info li i {
-            margin-right: 10px;
-            color: #FFD700; /* Gold icon */
-            font-size: 1.2em;
-        }
 
-        .section-title-left {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.6em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-            border-bottom: 3px solid #FFD700;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-
-        .skills ul, .languages ul, .hobbies ul {
-            list-style: none;
-            text-align: left;
-        }
-        .skills li, .languages li, .hobbies li {
-            margin-bottom: 10px;
-            font-size: 0.9em;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 8px 12px;
-            border-radius: 20px; /* Pill-shaped items */
-            display: inline-block; /* For skill tags */
-            margin-right: 8px;
-            color: #fff;
-        }
-        .skills li i, .languages li i, .hobbies li i {
-            margin-right: 8px;
-            color: #FFD700;
-        }
-        .languages span {
-            margin-left: 5px;
-        }
-        .languages .flag {
-            font-size: 1.2em; /* For flags */
-        }
-
-
-        /* Right Content (Kanan) */
-        .cv-right {
-            width: 65%;
-            padding: 40px 50px;
-            color: #333;
-            background-color: #fff;
-            position: relative;
-        }
-        .cv-right::before {
-            content: '🌟';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.8em;
-            opacity: 0.4;
-        }
-        .cv-right::after {
-            content: '🚀';
-            position: absolute;
-            bottom: 20px;
-            left: 50px;
-            font-size: 2em;
-            opacity: 0.3;
-        }
-
-        .section-title-right {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #FF69B4; /* Hot pink */
-            border-bottom: 3px solid #87CEEB; /* Sky blue border */
-            padding-bottom: 5px;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title-right i {
-            margin-right: 10px;
-            color: #87CEEB;
-        }
-
-
-        .about p {
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 0.95em;
-        }
-
-        .education-item, .experience-item, .certificate-item {
+        /* Bingkai Foto Profil */
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 25px;
-            position: relative;
-            padding-left: 25px; /* Space for the timeline dot */
-        }
-        .education-item::before, .experience-item::before, .certificate-item::before {
-            content: '•'; /* Simple dot for timeline */
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #FF69B4;
-            font-size: 1.5em;
-            line-height: 1;
         }
 
-        .education-item h4, .experience-item h4 {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 5px;
-        }
-        .education-item span, .experience-item span, .certificate-item span {
-            font-size: 0.85em;
-            color: #777;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .experience-item p {
-            font-size: 0.9em;
-            color: #666;
-            line-height: 1.6;
-        }
-        .certificate-item p {
-            font-size: 0.95em;
-            color: #555;
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Biar foto pas di lingkaran */
+            object-position: center top; /* Fokus ke wajah */
         }
 
-        /* Responsive Design */
+        .sidebar h2 {
+            font-size: 1.1rem;
+            color: var(--dark-pink);
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px dashed var(--medium-pink);
+            padding-bottom: 5px;
+        }
+
+        .contact-info { font-size: 0.85rem; line-height: 1.8; width: 100%; }
+        
+        /* Main Content */
+        .main-content { width: 65%; padding: 45px; }
+        
+        .header h1 { font-size: 2.8rem; color: var(--dark-pink); margin-bottom: 5px; }
+        .header p { color: #888; letter-spacing: 1px; margin-bottom: 30px; font-weight: bold; }
+
+        .section { margin-bottom: 30px; }
+        .section-title {
+            color: var(--dark-pink);
+            font-size: 1.2rem;
+            border-left: 5px solid var(--dark-pink);
+            padding-left: 12px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .item { margin-bottom: 15px; }
+        .item h4 { font-size: 1.05rem; color: #333; }
+        .item span { font-size: 0.85rem; color: var(--dark-pink); font-weight: bold; }
+        
+        .skill-badge {
+            display: inline-block;
+            background: var(--soft-pink);
+            color: var(--dark-pink);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 4px;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
-            .cv-container {
-                flex-direction: column;
-                margin: 20px 0;
-            }
-            .cv-left, .cv-right {
-                width: 100%;
-                padding: 30px 20px;
-            }
-            .cv-left {
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            .cv-right {
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
-            }
-            .name {
-                font-size: 2em;
-            }
-            .section-title-left, .section-title-right {
-                font-size: 1.4em;
-            }
+            .cv-container { flex-direction: column; }
+            .sidebar, .main-content { width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <div class="cv-container">
-        <div class="cv-left">
-            <img src="your-profile-picture.jpg" alt="Salma Salsabilla Profile Picture" class="profile-picture">
-            <h1 class="name">SALMA SABILA</h1>
-            <p class="tagline">Pelajar & Pengembang Diri</p>
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <img src="salma-sabilla.jpg" alt="Foto Salma Sabila">
+            </div>
 
+            <h2>Kontak</h2>
             <div class="contact-info">
-                <ul>
-                    <li><i class="fas fa-envelope"></i> salmasalsabilla0880@gmail.com</li>
-                    <li><i class="fas fa-phone-alt"></i> 081324151678</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Ciparay, Bandung</li>
-                    <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/sallmmbbila" target="_blank" style="color:white; text-decoration: none;">@sallmmbbila</a></li>
-                </ul>
+                📧 salmasalsabilla0880@gmail.com<br>
+                📸 @sallmmbbila<br>
+                📞 081324151678<br>
+                📍 Ciparay, Bandung
             </div>
 
-            <h2 class="section-title-left">Keahlian</h2>
-            <div class="skills">
-                <ul>
-                    <li><i class="fas fa-comments"></i> Komunikasi yang cukup baik</li>
-                    <li><i class="fas fa-clock"></i> Manajemen waktu yang baik</li>
-                    <li><i class="fas fa-users"></i> Kerjasama tim & kepanitiaan</li>
-                    <li><i class="fas fa-user"></i> Mampu bekerja individu/tim</li>
-                </ul>
+            <h2>Bahasa</h2>
+            <div class="contact-info">
+                🌸 Indonesia<br>
+                🌸 Inggris
             </div>
 
-            <h2 class="section-title-left">Bahasa</h2>
-            <div class="languages">
-                <ul>
-                    <li><i class="fas fa-language"></i> Indonesia <span class="flag">🇮🇩</span></li>
-                    <li><i class="fas fa-language"></i> Bahasa Inggris <span class="flag">🇬🇧</span></li>
-                </ul>
+            <h2>Hobby</h2>
+            <div class="contact-info">
+                🍳 Memasak<br>
+                🎬 Menonton
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>Salma Sabila</h1>
+                <p>PELAJAR | LAHIR 2008</p>
             </div>
 
-            <h2 class="section-title-left">Hobi</h2>
-            <div class="hobbies">
-                <ul>
-                    <li><i class="fas fa-utensils"></i> Memasak</li>
-                    <li><i class="fas fa-tv"></i> Menonton</li>
-                </ul>
-            </div>
-        </div>
+            <section class="section">
+                <h3 class="section-title">Tentang Saya</h3>
+                <p style="line-height: 1.6;">Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.</p>
+            </section>
 
-        <div class="cv-right">
-            <h2 class="section-title-right"><i class="fas fa-user-graduate"></i>Tentang Saya</h2>
-            <div class="about">
-                <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.</p>
-            </div>
-
-            <h2 class="section-title-right"><i class="fas fa-book-open"></i> Pendidikan</h2>
-            <div class="education">
-                <div class="education-item">
+            <section class="section">
+                <h3 class="section-title">Pendidikan</h3>
+                <div class="item">
                     <h4>SMA KP BALEENDAH</h4>
-                    <span>2023-2026</span>
+                    <span>2023 - 2026</span>
                 </div>
-                <div class="education-item">
-                    <h4>MTsN 1 BANDUNG</h4>
-                    <span>2020-2022</span>
+                <div class="item">
+                    <h4>MTSN 1 BANDUNG</h4>
+                    <span>2020 - 2022</span>
                 </div>
-                <div class="education-item">
+                <div class="item">
                     <h4>SDN 3 GUNUNGLEUTIK</h4>
-                    <span>2014-2019</span>
+                    <span>2014 - 2019</span>
                 </div>
-            </div>
+            </section>
 
-            <h2 class="section-title-right"><i class="fas fa-briefcase"></i> Pengalaman</h2>
-            <div class="experience">
-                <div class="experience-item">
-                    <h4>Ketua Eskul Karate MTsN 1 Bandung</h4>
-                    <span>2022-2023</span>
-                </div>
-                <div class="experience-item">
-                    <h4>Osis SMA KP BALEENDAH</h4>
-                    <span>2023</span>
-                </div>
-                <div class="experience-item">
-                    <h4>Sekertaris Katar 03</h4>
-                    <span>2023-2026</span>
-                </div>
-            </div>
+            <section class="section">
+                <h3 class="section-title">Keahlian</h3>
+                <div class="skill-badge">Komunikasi</div>
+                <div class="skill-badge">Manajemen Waktu</div>
+                <div class="skill-badge">Kerja Sama Tim</div>
+                <div class="skill-badge">Kepanitiaan</div>
+            </section>
 
-            <h2 class="section-title-right"><i class="fas fa-award"></i> Sertifikat & Penghargaan</h2>
-            <div class="certificates">
-                <div class="certificate-item">
-                    <p>Lomba Puisi Juara 2</p>
+            <section class="section">
+                <h3 class="section-title">Pengalaman</h3>
+                <div class="item">
+                    <h4>Ketua Eskul Karate</h4>
+                    <span>MTsN 1 Bandung (2022-2023)</span>
                 </div>
-                <div class="certificate-item">
-                    <p>Lomba Karate Juara Harapan 3</p>
+                <div class="item">
+                    <h4>OSIS</h4>
+                    <span>SMA KP BALEENDAH (2023)</span>
                 </div>
-                <div class="certificate-item">
-                    <p>Hafalan Juz 30</p>
+                <div class="item">
+                    <h4>Sekretaris Katar 03</h4>
+                    <span>2023 - 2026</span>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Sertifikat</h3>
+                <p style="font-size: 0.95rem; line-height: 1.8;">
+                    🏆 Lomba Puisi Juara 2<br>
+                    🥋 Lomba Karate Juara Harapan 3<br>
+                    📖 Hafalan Juz 30
+                </p>
+            </section>
+        </main>
     </div>
 
 </body>
-</html>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+</html>
 </body>
 </html>
