@@ -2,220 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Salma Sabila - Soft Pink Edition</title>
-    <style>
-        :root {
-            --soft-pink: #fce4ec;
-            --medium-pink: #f8bbd0;
-            --dark-pink: #ec407a;
-            --text-color: #4a4a4a;
-            --white: #ffffff;
-        }
-
+    <meta name="viewport" content="width=<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Salma Sabila</title>
+  <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #fff5f7;
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+            background: linear-gradient(135deg, #ffc1e3 0%, #ffd4e5 50%, #ffe5ec 100%);
+            min-height: 100vh;
             padding: 40px 20px;
+            color: #333;
         }
 
         .cv-container {
-            width: 100%;
-            max-width: 850px;
-            background: var(--white);
-            display: flex;
-            border-radius: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(236, 64, 122, 0.15);
+            animation: slideIn 0.8s ease-out;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 35%;
-            background-color: var(--soft-pink);
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Bingkai Foto Profil */
-        .profile-img-container {
+        .header {
+            background: linear-gradient(135deg, #ffb3d9 0%, #ffc9e3 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-image-container {
             width: 180px;
             height: 180px;
+            margin: 0 auto 20px;
             border-radius: 50%;
-            border: 6px solid var(--white);
+            border: 6px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+            background: #fff;
         }
 
-        .profile-img-container img {
+        .profile-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Biar foto pas di lingkaran */
-            object-position: center top; /* Fokus ke wajah */
+            object-fit: cover;
         }
 
-        .sidebar h2 {
-            font-size: 1.1rem;
-            color: var(--dark-pink);
-            margin: 20px 0 10px 0;
-            text-transform: uppercase;
-            width: 100%;
-            text-align: center;
-            border-bottom: 2px dashed var(--medium-pink);
+        .profile-name {
+            color: white;
+            font-size: 42px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content { padding: 40px; }
+
+        .section-title {
+            font-size: 26px;
+            color: #ff99cc;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed #ffe5f0;
             padding-bottom: 5px;
         }
 
-        .contact-info { font-size: 0.85rem; line-height: 1.8; width: 100%; }
-        
-        /* Main Content */
-        .main-content { width: 65%; padding: 45px; }
-        
-        .header h1 { font-size: 2.8rem; color: var(--dark-pink); margin-bottom: 5px; }
-        .header p { color: #888; letter-spacing: 1px; margin-bottom: 30px; font-weight: bold; }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-        .section { margin-bottom: 30px; }
-        .section-title {
-            color: var(--dark-pink);
-            font-size: 1.2rem;
-            border-left: 5px solid var(--dark-pink);
-            padding-left: 12px;
+        .info-card {
+            background: #fff5f9;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            border-left: 4px solid #ff99cc;
+            padding: 10px 20px;
             margin-bottom: 15px;
+            background: #fff;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: #ffe5f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
             font-weight: bold;
         }
 
-        .item { margin-bottom: 15px; }
-        .item h4 { font-size: 1.05rem; color: #333; }
-        .item span { font-size: 0.85rem; color: var(--dark-pink); font-weight: bold; }
-        
-        .skill-badge {
-            display: inline-block;
-            background: var(--soft-pink);
-            color: var(--dark-pink);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 4px;
-            font-weight: 500;
+        .footer {
+            background: #ffb3d9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
         }
-
-        @media (max-width: 768px) {
-            .cv-container { flex-direction: column; }
-            .sidebar, .main-content { width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="cv-container">
-        <aside class="sidebar">
-            <div class="profile-img-container">
-                <img src="WhatsApp Image 2026-01-29 at 11.17.04.jpeg" alt="Foto Salma Sabila">
-            </div>
-
-            <h2>Kontak</h2>
-            <div class="contact-info">
-                📧 salmasalsabilla0880@gmail.com<br>
-                📸 @sallmmbbila<br>
-                📞 081324151678<br>
-                📍 Ciparay, Bandung
-            </div>
-
-            <h2>Bahasa</h2>
-            <div class="contact-info">
-                🌸 Indonesia<br>
-                🌸 Inggris
-            </div>
-
-            <h2>Hobby</h2>
-            <div class="contact-info">
-                🍳 Memasak<br>
-                🎬 Menonton
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <div class="header">
-                <h1>Salma Sabila</h1>
-                <p>PELAJAR | LAHIR 2008</p>
-            </div>
-
-            <section class="section">
-                <h3 class="section-title">Tentang Saya</h3>
-                <p style="line-height: 1.6;">Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.</p>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Pendidikan</h3>
-                <div class="item">
-                    <h4>SMA KP BALEENDAH</h4>
-                    <span>2023 - 2026</span>
-                </div>
-                <div class="item">
-                    <h4>MTSN 1 BANDUNG</h4>
-                    <span>2020 - 2022</span>
-                </div>
-                <div class="item">
-                    <h4>SDN 3 GUNUNGLEUTIK</h4>
-                    <span>2014 - 2019</span>
-                </div>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Keahlian</h3>
-                <div class="skill-badge">Komunikasi</div>
-                <div class="skill-badge">Manajemen Waktu</div>
-                <div class="skill-badge">Kerja Sama Tim</div>
-                <div class="skill-badge">Kepanitiaan</div>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Pengalaman</h3>
-                <div class="item">
-                    <h4>Ketua Eskul Karate</h4>
-                    <span>MTsN 1 Bandung (2022-2023)</span>
-                </div>
-                <div class="item">
-                    <h4>OSIS</h4>
-                    <span>SMA KP BALEENDAH (2023)</span>
-                </div>
-                <div class="item">
-                    <h4>Sekretaris Katar 03</h4>
-                    <span>2023 - 2026</span>
-                </div>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Sertifikat</h3>
-                <p style="font-size: 0.95rem; line-height: 1.8;">
-                    🏆 Lomba Puisi Juara  (2018) <br>
-                    🥋 Lomba Karate Juara Harapan 3 (2021) <br>
-                    📖 Hafalan Juz 30 (2022)
-                </p>
-            </section>
-        </main>
+  </style>
+ </head>
+ <body>
+  <div class="cv-container">
+    <div class="header">
+      <div class="profile-image-container">
+        <img src="https://r.jina.ai/i/6f906f363c4a4507bd3f707449bc27a9" alt="Foto Profil Salma Sabila">
+      </div>
+      <h1 class="profile-name">Salma Sabila</h1>
+      <p style="color: white; opacity: 0.9;">Pelajar Berprestasi & Penuh Semangat</p>
     </div>
 
-</body>
-</html>
+    <div class="content">
+      <div class="section-title">📞 Kontak</div>
+      <div class="info-grid">
+        <div class="info-card">📧 salmasalsabilla0880@gmail.com</div>
+        <div class="info-card">📱 081324151678</div>
+        <div class="info-card">📸 @sallmmbbila</div>
+        <div class="info-card">🏠 Ciparay, Bandung</div>
+      </div>
+
+      <div class="section-title">💫 Tentang Saya</div>
+      <p style="line-height: 1.6; margin-bottom: 30px;">
+        Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.
+      </p>
+
+      <div class="section-title">🎓 Pendidikan</div>
+      <div class="timeline-item">
+        <strong>SMA KP BALEENDAH</strong><br>2023 - 2026
+      </div>
+      <div class="timeline-item">
+        <strong>MTsN 1 BANDUNG</strong><br>2020 - 2022
+      </div>
+
+      <div class="section-title">🏆 Prestasi</div>
+      <div style="margin-bottom: 30px;">
+        <span class="skill-badge">🥈 Juara 2 Lomba Puisi</span>
+        <span class="skill-badge">🥋 Lomba Karate Harapan 3</span>
+        <span class="skill-badge">📖 Hafalan Juz 30</span>
+      </div>
+
+      <div class="section-title">💼 Organisasi</div>
+      <div class="timeline-item">
+        <strong>Ketua Ekstrakurikuler Karate</strong> (MTsN 1 Bandung)
+      </div>
+      <div class="timeline-item">
+        <strong>Sekretaris Katar 03</strong> (2023 - 2026)
+      </div>
+    </div>
+
+    <div class="footer">
+      ✨ Terima kasih telah melihat CV saya! ✨
+    </div>
+  </div>
+ </body>
+</html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 </body>
 </html>
