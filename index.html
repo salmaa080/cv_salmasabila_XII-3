@@ -7,220 +7,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Lucu Salma Sabila</title>
+    <title>CV Aesthetic Salma Sabila</title>
     <style>
-        /* SETUP DASAR */
+        /* IMPORT FONT AESTHETIC */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syne:wght@700;800&display=swap');
+
+        :root {
+            --bg-color: #fce4ec;
+            --main-pink: #f8bbd0;
+            --dark-pink: #f06292;
+            --black: #1a1a1a;
+        }
+
         body {
-            background: #fff0f6;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(var(--main-pink) 1px, transparent 1px);
+            background-size: 20px 20px; /* Pola titik-titik kecil di background */
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--black);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 50px 20px;
             margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* ANIMASI BACKGROUND */
-        .bubbles {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-        }
-
-        .bubble {
-            position: absolute;
-            background: rgba(255, 182, 193, 0.4);
-            border-radius: 50%;
-            animation: float-bubble 10s infinite linear;
-        }
-
-        @keyframes float-bubble {
-            0% { transform: translateY(100vh) scale(0); opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
         }
 
         /* CONTAINER UTAMA */
-        .cv-card {
+        .cv-wrapper {
             background: white;
-            width: 90%;
-            max-width: 650px;
-            padding: 30px;
-            border-radius: 40px;
-            border: 6px dashed #ffb6c1;
-            box-shadow: 0 20px 0 #f8bbd0;
-            margin: 40px 0;
-            animation: pop-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            max-width: 850px;
+            border: 3px solid var(--black);
+            box-shadow: 15px 15px 0px var(--dark-pink);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes pop-in {
-            0% { transform: scale(0); }
-            100% { transform: scale(1); }
+        /* ELEMEN DEKORASI BINTANG */
+        .sparkle {
+            position: absolute;
+            width: 30px;
+            animation: blink 2s infinite;
         }
 
-        /* FOTO & NAMA */
+        @keyframes blink {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* HEADER SECTION */
         .header {
-            text-align: center;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            align-items: end;
+            margin-bottom: 40px;
         }
 
-        .profile-pic {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 5px solid #ff85a1;
-            padding: 5px;
+        /* BINGKAI FOTO ALA REFERENSI */
+        .photo-container {
+            width: 180px;
+            height: 220px;
+            border: 3px solid var(--black);
             background: white;
-            transition: transform 0.3s;
-            cursor: pointer;
+            padding: 10px;
+            box-shadow: 8px 8px 0px var(--black);
+            position: relative;
         }
 
-        .profile-pic:hover {
-            transform: rotate(10deg) scale(1.1);
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
         }
 
-        h1 {
-            color: #ff4d6d;
-            margin: 10px 0 5px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px #ffe5ec;
+        .name-title h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -2px;
         }
 
-        /* BAGIAN PER BAGIAN */
-        .section {
-            background: #fff9fb;
-            border-radius: 20px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-left: 8px solid #ff85a1;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .section:hover {
-            transform: translateX(10px) translateY(-5px);
-            background: #ffe5ec;
-            box-shadow: 5px 5px 15px rgba(255, 133, 161, 0.2);
-        }
-
-        h2 {
-            margin-top: 0;
-            color: #ff4d6d;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::before {
-            content: '🌸';
-            margin-right: 10px;
-        }
-
-        p, li {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* GRID UNTUK INFO KECIL */
-        .grid-container {
+        /* BAGIAN INFORMASI */
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 40px;
         }
 
-        /* LABEL WARNA-WARNI */
-        .tag {
+        .section-title {
+            background: var(--main-pink);
+            border: 2px solid var(--black);
+            border-radius: 50px;
             display: inline-block;
-            background: #ff85a1;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            margin: 2px;
-            animation: dangle 2s infinite ease-in-out;
+            padding: 5px 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            box-shadow: 3px 3px 0px var(--black);
         }
 
-        @keyframes dangle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
+        /* LIST STYLE */
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .contact-info {
-            font-size: 13px;
-            margin-bottom: 5px;
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
         }
 
+        li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+        }
+
+        /* PROGRESS BAR (UNTUK BAHASA/SKILL) */
+        .skill-bar {
+            height: 12px;
+            background: #eee;
+            border: 2px solid var(--black);
+            margin-top: 5px;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--dark-pink);
+        }
+
+        /* HOVER ANIMATION */
+        .cv-wrapper:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .header, .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .name-title h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="bubbles">
-        <div class="bubble" style="width:40px; height:40px; left:10%; animation-duration: 8s;"></div>
-        <div class="bubble" style="width:20px; height:20px; left:80%; animation-duration: 6s;"></div>
-        <div class="bubble" style="width:60px; height:60px; left:50%; animation-duration: 12s;"></div>
-    </div>
+    <span class="sparkle" style="top:20px; right:40px;">✦</span>
+    <span class="sparkle" style="top:150px; left:10px;">✦</span>
 
-    <div class="cv-card">
+    <div class="cv-wrapper">
         <div class="header">
-            <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Foto Salma" class="profile-pic">
-            <h1>Salma Sabila</h1>
-            <p><strong>Ciparay, Bandung</strong> | Lahir: 2008</p>
-        </div>
-
-        <div class="section">
-            <h2>Tentang Aku</h2>
-            <p>Saya pribadi yang tekun dan kepo banget sama teknologi! Saya percaya pendidikan itu bukan cuma cari gelar, tapi cara kita berevolusi buat masa depan yang lebih keren. ✨</p>
-        </div>
-
-        <div class="grid-container">
-            <div class="section">
-                <h2>Kontak</h2>
-                <div class="contact-info">📧 salmasabila008@gmail.com</div>
-                <div class="contact-info">📸 @sallmmbbila</div>
-                <div class="contact-info">📞 082115194018</div>
+            <div class="photo-container">
+                <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Salma Sabila">
             </div>
-
-            <div class="section">
-                <h2>Hobby</h2>
-                <span class="tag">👩‍🍳 Memasak</span>
-                <span class="tag">🍿 Menonton</span>
+            <div class="name-title">
+                <h1>SALMA<br>SABILA</h1>
+                <p style="font-weight: bold; margin-top: 10px;">BORN IN 2008 | STUDENT & TECH ENTHUSIAST</p>
             </div>
         </div>
 
-        <div class="section">
-            <h2>Pendidikan</h2>
-            <ul>
-                <li><strong>SMA KP BALEENDAH</strong> (2023-2026)</li>
-                <li><strong>MTSN 1 BANDUNG</strong> (2020-2022)</li>
-                <li><strong>SDN 3 GUNUNGLEUTIK</strong> (2014-2019)</li>
-            </ul>
+        <div class="grid-layout">
+            <div>
+                <div class="section-title">About Me</div>
+                <p style="font-size: 0.9rem; line-height: 1.5;">
+                    Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya percaya bahwa persiapan masa depan yang baik dimulai dengan keberanian untuk terus berevolusi.
+                </p>
+
+                <div class="section-title">Contact</div>
+                <ul style="font-size: 0.85rem;">
+                    <li>📍 Ciparay, Bandung</li>
+                    <li>📞 082115194018</li>
+                    <li>📧 salmasabila008@gmail.com</li>
+                    <li>📸 @sallmmbbila</li>
+                </ul>
+
+                <div class="section-title">Education</div>
+                <ul style="font-size: 0.85rem;">
+                    <li><strong>SMA KP BALEENDAH</strong> (2023-2026)</li>
+                    <li><strong>MTSN 1 BANDUNG</strong> (2020-2022)</li>
+                    <li><strong>SDN 3 GUNUNGLEUTIK</strong> (2014-2019)</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="section-title">Skills</div>
+                <ul style="font-size: 0.85rem;">
+                    <li>Komunikasi & Kerja Sama Tim
+                        <div class="skill-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </li>
+                    <li>Manajemen Waktu
+                        <div class="skill-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </li>
+                    <li>Leadership (Ketua Ekskul)
+                        <div class="skill-bar"><div class="progress" style="width: 80%;"></div></div>
+                    </li>
+                </ul>
+
+                <div class="section-title">Experience</div>
+                <ul style="font-size: 0.85rem;">
+                    <li><strong>Ketua Eskul Karate</strong> - MTsN 1 Bandung</li>
+                    <li><strong>OSIS</strong> - SMA KP Baleendah</li>
+                    <li><strong>Sekretaris</strong> - Karang Taruna 03</li>
+                </ul>
+
+                <div class="section-title">Achievements</div>
+                <ul style="font-size: 0.85rem;">
+                    <li>🏆 Juara 2 Lomba Puisi</li>
+                    <li>🥋 Juara Harapan 3 Karate</li>
+                    <li>📖 Hafalan Juz 30</li>
+                </ul>
+                
+                <div class="section-title">Hobby</div>
+                <p>👩‍🍳 Memasak | 🍿 Menonton</p>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Pengalaman Seru</h2>
-            <ul>
-                <li>🥋 Ketua Eskul Karate MTsN 1 (2022-2023)</li>
-                <li>🏫 OSIS SMA KP BALEENDAH (2023)</li>
-                <li>🤝 Sekretaris Katar 03 (2023-2026)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Keahlian</h2>
-            <span class="tag">Komunikasi Oke</span>
-            <span class="tag">Manajemen Waktu</span>
-            <span class="tag">Team Work</span>
-            <span class="tag">Mandiri</span>
-        </div>
-
-        <div class="section">
-            <h2>Prestasi</h2>
-            <p>🏆 Juara 2 Puisi | 🥋 Juara Harapan 3 Karate | 📖 Hafalan Juz 30</p>
-        </div>
-
-        <div style="text-align: center; font-size: 12px; color: #ff85a1;">
-            Dibuat dengan ❤️ untuk Salma
+        <div style="margin-top: 30px; text-align: center; border-top: 2px solid #000; padding-top: 10px; font-size: 0.7rem; letter-spacing: 2px;">
+            DESIGNED WITH LOVE FOR SALMA SABILA ✦ 2026
         </div>
     </div>
 
