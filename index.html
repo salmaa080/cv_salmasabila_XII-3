@@ -2,676 +2,210 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!doctype html>
+    <meta name="viewport" content="width=<!DOCTYPE html>
 <html lang="id">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Salma Sabila - Super Cute! 💗</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&amp;family=Comfortaa:wght@400;700&amp;family=Varela+Round&amp;display=swap" rel="stylesheet">
-  <style>
-        * {
-            box-sizing: border-box;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Salma Sabila</title>
+    <style>
+        /* CSS UNTUK DESAIN LUCU & SOFT PINK */
+        :root {
+            --pink-soft: #ffdee9;
+            --pink-medium: #fbbedf;
+            --pink-dark: #ff85a1;
+            --text-color: #5d5d5d;
         }
 
         body {
-            margin: 0;
-            padding: 20px;
-            font-family: 'Comfortaa', 'Fredoka', cursive, sans-serif;
-            background: linear-gradient(135deg, #FFB6E1 0%, #FFC0CB 50%, #FFD4E5 100%);
-            min-height: 100vh;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #ffdee9 0%, #b5fffc 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        .cv-container {
             background: white;
+            width: 100%;
+            max-width: 800px;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
-            border: 5px solid #FFB6E1;
+            border: 8px solid var(--pink-medium);
         }
 
-        /* ===== HEADER ===== */
+        /* Header / Foto Profil */
         .header {
-            background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%);
-            padding: 40px 30px;
+            background-color: var(--pink-medium);
+            padding: 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '💗 ✨ 💗';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 24px;
-            opacity: 0.6;
-        }
-
-        .header::after {
-            content: '✨ 💗 ✨';
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 24px;
-            opacity: 0.6;
-        }
-
-        .profile-section {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 15px;
+            color: white;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #FFD4E5 0%, #FFE4F0 100%);
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 120px;
-            border: 8px solid white;
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
-            animation: bounce 3s ease-in-out infinite;
-            overflow: hidden;
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
+            border: 5px solid white;
             object-fit: cover;
-            border-radius: 50%;
+            background-color: #eee;
+            margin-bottom: 15px;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) scaleY(1); }
-            25% { transform: translateY(-25px) scaleY(0.95); }
-            50% { transform: translateY(0) scaleY(1); }
-            75% { transform: translateY(-15px) scaleY(0.98); }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px #ff85a1;
         }
 
-        .nama {
-            font-size: 42px;
-            color: white;
-            margin: 15px 0;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            animation: heartbeat 1.2s ease-in-out infinite, shimmer 3s ease-in-out infinite, wiggle 2s ease-in-out infinite, dancingText 4s ease-in-out infinite;
-            font-family: 'Fredoka', sans-serif;
-            letter-spacing: 2px;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.15); }
-            50% { transform: scale(1); }
-        }
-
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            15% { transform: rotate(2deg); }
-            30% { transform: rotate(-2deg); }
-            45% { transform: rotate(2deg); }
-            60% { transform: rotate(-2deg); }
-            75% { transform: rotate(1deg); }
-        }
-
-        @keyframes shimmer {
-            0%, 100% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0); }
-            50% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 192, 203, 0.6); }
-        }
-
-        @keyframes dancingText {
-            0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-5px); }
-            50% { transform: translateY(0); }
-            75% { transform: translateY(-5px); }
-        }
-
-        /* Animasi keren untuk section title */
-        @keyframes slideInScale {
-            from {
-                opacity: 0;
-                transform: translateX(-30px) scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0) scale(1);
-            }
-        }
-
-        .section-title {
-            animation: slideInScale 0.6s ease-out;
-        }
-
-        /* Animasi untuk item list */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .item-list li {
-            animation: slideUp 0.5s ease-out backwards;
-        }
-
-        .item-list li:nth-child(1) { animation-delay: 0.1s; }
-        .item-list li:nth-child(2) { animation-delay: 0.2s; }
-        .item-list li:nth-child(3) { animation-delay: 0.3s; }
-        .item-list li:nth-child(4) { animation-delay: 0.4s; }
-        .item-list li:nth-child(5) { animation-delay: 0.5s; }
-
-        /* Animasi untuk tag */
-        @keyframes popIn {
-            from {
-                opacity: 0;
-                transform: scale(0) rotate(-180deg);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
-        }
-
-        .tag {
-            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-        }
-
-        .tag:nth-child(1) { animation-delay: 0.1s; }
-        .tag:nth-child(2) { animation-delay: 0.2s; }
-        .tag:nth-child(3) { animation-delay: 0.3s; }
-        .tag:nth-child(4) { animation-delay: 0.4s; }
-        .tag:nth-child(5) { animation-delay: 0.5s; }
-        .tag:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Animasi float untuk kontak item */
-        @keyframes floatUp {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .kontak-item {
-            animation: floatUp 3s ease-in-out infinite;
-        }
-
-        .kontak-item:nth-child(1) { animation-delay: 0s; }
-        .kontak-item:nth-child(2) { animation-delay: 0.3s; }
-        .kontak-item:nth-child(3) { animation-delay: 0.6s; }
-        .kontak-item:nth-child(4) { animation-delay: 0.9s; }
-
-        /* Animasi spin untuk emoji di header */
-        @keyframes spin {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(10deg); }
-        }
-
-        .header::before {
-            animation: spin 4s ease-in-out infinite !important;
-        }
-
-        .header::after {
-            animation: spin 4s ease-in-out infinite reverse !important;
-        }
-
-        /* Animasi pulse untuk tentang text */
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15); }
-            50% { box-shadow: 0 5px 35px rgba(255, 105, 180, 0.35); }
-        }
-
-        .tentang-text {
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        /* Animasi rainbow untuk footer */
-        @keyframes rainbow {
-            0% { background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%); }
-            25% { background: linear-gradient(135deg, #FFB6E1 0%, #FF1493 100%); }
-            50% { background: linear-gradient(135deg, #FF1493 0%, #FFB6E1 100%); }
-            75% { background: linear-gradient(135deg, #FFB6E1 0%, #FF69B4 100%); }
-            100% { background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%); }
-        }
-
-        .footer {
-            animation: rainbow 6s ease-in-out infinite;
-        }
-
-        .tahun-lahir {
-            color: white;
-            font-size: 18px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-        }
-
-        /* ===== KONTAK INFO ===== */
-        .kontak-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            padding: 30px;
-            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4F0 100%);
-            border-bottom: 5px dashed #FFB6E1;
-        }
-
-        .kontak-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 18px;
-            background: white;
-            border-radius: 20px;
-            border-left: 6px solid #FF69B4;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .kontak-item:hover {
-            transform: translateX(10px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.35);
-            border-left-width: 8px;
-        }
-
-        .kontak-icon {
-            font-size: 32px;
-            min-width: 50px;
-        }
-
-        .kontak-text {
-            font-size: 15px;
-            color: #333;
-        }
-
-        .kontak-label {
-            font-weight: bold;
-            color: #FF69B4;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-
-        /* ===== CONTENT ===== */
+        /* Layout Konten */
         .content {
-            padding: 40px 30px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .sidebar {
+            border-right: 2px dashed var(--pink-soft);
+            padding-right: 20px;
+        }
+
+        h2 {
+            color: var(--pink-dark);
+            border-bottom: 2px solid var(--pink-soft);
+            padding-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
 
         .section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: white;
-            background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%);
-            padding: 15px 25px;
-            border-radius: 20px;
             margin-bottom: 25px;
-            display: inline-block;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
-            border: 3px solid #FFD4E5;
-            transition: all 0.3s ease;
         }
 
-        .section-title:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.4);
+        ul {
+            padding-left: 20px;
         }
 
-        /* ===== TENTANG ===== */
-        .tentang-text {
-            background: linear-gradient(135deg, #FFFACD 0%, #FFE4E1 100%);
-            padding: 25px;
-            border-radius: 20px;
-            line-height: 1.9;
-            color: #333;
-            border: 4px solid #FFB6E1;
-            border-left: 8px solid #FF69B4;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
-        }
-
-        .animated-word {
-            display: inline-block;
-            animation: glowPink 2s ease-in-out infinite;
-            font-weight: 600;
-        }
-
-        @keyframes glowPink {
-            0%, 100% { color: #333; }
-            50% { color: #FF1493; }
-        }
-
-        .animated-word:nth-child(1) { animation-delay: 0s; }
-        .animated-word:nth-child(2) { animation-delay: 0.12s; }
-        .animated-word:nth-child(3) { animation-delay: 0.24s; }
-        .animated-word:nth-child(4) { animation-delay: 0.36s; }
-        .animated-word:nth-child(5) { animation-delay: 0.48s; }
-        .animated-word:nth-child(6) { animation-delay: 0.6s; }
-        .animated-word:nth-child(7) { animation-delay: 0.72s; }
-        .animated-word:nth-child(8) { animation-delay: 0.84s; }
-        .animated-word:nth-child(9) { animation-delay: 0.96s; }
-        .animated-word:nth-child(10) { animation-delay: 1.08s; }
-        .animated-word:nth-child(11) { animation-delay: 1.2s; }
-        .animated-word:nth-child(12) { animation-delay: 1.32s; }
-        .animated-word:nth-child(13) { animation-delay: 1.44s; }
-        .animated-word:nth-child(14) { animation-delay: 1.56s; }
-        .animated-word:nth-child(15) { animation-delay: 1.68s; }
-        .animated-word:nth-child(16) { animation-delay: 1.8s; }
-        .animated-word:nth-child(17) { animation-delay: 1.92s; }
-        .animated-word:nth-child(18) { animation-delay: 2.04s; }
-        .animated-word:nth-child(19) { animation-delay: 2.16s; }
-        .animated-word:nth-child(20) { animation-delay: 2.28s; }
-        .animated-word:nth-child(21) { animation-delay: 2.4s; }
-        .animated-word:nth-child(22) { animation-delay: 2.52s; }
-        .animated-word:nth-child(23) { animation-delay: 2.64s; }
-        .animated-word:nth-child(24) { animation-delay: 2.76s; }
-        .animated-word:nth-child(25) { animation-delay: 2.88s; }
-
-        /* ===== ITEM LIST ===== */
-        .item-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .item-list li {
-            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4F0 100%);
-            margin-bottom: 15px;
-            padding: 18px 22px;
-            border-radius: 18px;
-            border-left: 6px solid #FF69B4;
-            border-top: 3px solid #FFB6E1;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .item-list li:hover {
-            transform: translateX(12px) translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
-            border-left-width: 8px;
-            background: linear-gradient(135deg, #FFE4F0 0%, #FFD4E5 100%);
-        }
-
-        .item-title {
-            font-weight: bold;
-            color: #FF1493;
+        li {
             margin-bottom: 8px;
-            font-size: 17px;
         }
 
-        .item-subtitle {
-            color: #999;
-            font-size: 14px;
-            margin-top: 6px;
-        }
-
-        /* ===== TAG CONTAINER ===== */
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 14px;
+        .badge {
+            display: inline-block;
+            background: var(--pink-soft);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin: 3px;
+            color: #d1476d;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
-            border: 2px solid #FFD4E5;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards, tagJump 2.5s ease-in-out infinite;
         }
 
-        @keyframes popIn {
-            from {
-                opacity: 0;
-                transform: scale(0) rotate(-180deg);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
-        }
-
-        @keyframes tagJump {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-10px) scale(1.08); }
-        }
-
-        .achievement-tag {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-        }
-
-        .language-tag {
-            background: linear-gradient(135deg, #87CEEB 0%, #87DBDB 100%);
-        }
-
-        .hobby-tag {
-            background: linear-gradient(135deg, #FF6347 0%, #FFB6C1 100%);
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: linear-gradient(135deg, #FF69B4 0%, #FFB6E1 100%);
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border-top: 5px solid #FFD4E5;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        /* Responsif untuk HP */
         @media (max-width: 600px) {
-            .nama {
-                font-size: 32px;
-            }
-
-            .profile-img {
-                width: 140px;
-                height: 140px;
-                font-size: 90px;
-            }
-
             .content {
-                padding: 20px;
-            }
-
-            .section-title {
-                font-size: 22px;
-            }
-
-            .kontak-info {
                 grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 2px dashed var(--pink-soft);
+                padding-bottom: 20px;
             }
         }
     </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
-  <div class="container"><!-- HEADER -->
-   <div class="header">
-    <div class="profile-section">
-     <div class="profile-img"><img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Foto Profil Salma Sabila" loading="lazy" onerror="this.style.display='none'; this.parentElement.textContent='👧';">
-     </div>
-     <h1 class="nama">Salma Sabila</h1>
-     <p class="tahun-lahir">📅 Lahir: 2008 | 📍 Dari Ciparay, Bandung</p>
+</head>
+<body>
+
+<div class="cv-container">
+    <div class="header">
+        <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Foto Salma Sabila" class="profile-img">
+        <h1>Salma Sabila</h1>
+        <p>Student | Tech Enthusiast</p>
     </div>
-   </div><!-- KONTAK INFO -->
-   <div class="kontak-info">
-    <div class="kontak-item">
-     <div class="kontak-icon">
-      📧
-     </div>
-     <div class="kontak-text"><span class="kontak-label">Email</span> salmasabila008@gmail.com
-     </div>
+
+    <div class="content">
+        <div class="sidebar">
+            <div class="section">
+                <h2>Kontak</h2>
+                <div class="info-item">📧 salmasabila008@gmail.com</div>
+                <div class="info-item">📸 @sallmmbbila</div>
+                <div class="info-item">📞 082115194018</div>
+                <div class="info-item">📍 Ciparay, Bandung</div>
+            </div>
+
+            <div class="section">
+                <h2>Keahlian</h2>
+                <span class="badge">Komunikasi</span>
+                <span class="badge">Manajemen Waktu</span>
+                <span class="badge">Team Work</span>
+                <span class="badge">Problem Solving</span>
+            </div>
+
+            <div class="section">
+                <h2>Bahasa</h2>
+                <ul>
+                    <li>Indonesia</li>
+                    <li>Inggris</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Hobby</h2>
+                <div class="badge">🍳 Memasak</div>
+                <div class="badge">🎬 Menonton</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="section">
+                <h2>Tentang Saya</h2>
+                <p style="font-size: 0.95em; line-height: 1.6;">
+                    Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya percaya bahwa persiapan masa depan yang baik dimulai dengan keberanian untuk terus berevolusi dan kemauan untuk menjadi jembatan bagi kemajuan ilmu pengetahuan.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Pendidikan</h2>
+                <ul>
+                    <li><strong>SMA KP BALEENDAH</strong> (2023 - 2026)</li>
+                    <li><strong>MTSN 1 BANDUNG</strong> (2020 - 2022)</li>
+                    <li><strong>SDN 3 GUNUNGLEUTIK</strong> (2014 - 2019)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Pengalaman</h2>
+                <ul>
+                    <li><strong>Sekretaris Karang Taruna 03</strong> (2023 - 2026)</li>
+                    <li><strong>OSIS SMA KP BALEENDAH</strong> (2023)</li>
+                    <li><strong>Ketua Ekskul Karate MTsN 1 Bandung</strong> (2022 - 2023)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Sertifikat & Prestasi</h2>
+                <ul>
+                    <li>Juara 2 Lomba Puisi</li>
+                    <li>Juara Harapan 3 Lomba Karate</li>
+                    <li>Hafalan Juz 30</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="kontak-item">
-     <div class="kontak-icon">
-      📱
-     </div>
-     <div class="kontak-text"><span class="kontak-label">Telepon</span> 082115194018
-     </div>
-    </div>
-    <div class="kontak-item">
-     <div class="kontak-icon">
-      📍
-     </div>
-     <div class="kontak-text"><span class="kontak-label">Alamat</span> Ciparay, Bandung
-     </div>
-    </div>
-    <div class="kontak-item">
-     <div class="kontak-icon">
-      📸
-     </div>
-     <div class="kontak-text"><span class="kontak-label">Instagram</span> @sallmmbbila
-     </div>
-    </div>
-   </div><!-- CONTENT -->
-   <div class="content"><!-- TENTANG SAYA -->
-    <div class="section">
-     <div class="section-title">
-      👋 Tentang Saya
-     </div>
-     <div class="tentang-text"><span class="animated-word">Saya</span> <span class="animated-word">pribadi</span> <span class="animated-word">yang</span> <span class="animated-word">tekun,</span> <span class="animated-word">memiliki</span> <span class="animated-word">rasa</span> <span class="animated-word">ingin</span> <span class="animated-word">tahu</span> <span class="animated-word">tinggi,</span> <span class="animated-word">dan</span> <span class="animated-word">tertarik</span> <span class="animated-word">pada</span> <span class="animated-word">dunia</span> <span class="animated-word">pendidikan</span> <span class="animated-word">serta</span> <span class="animated-word">teknologi.</span> <span class="animated-word">Saya</span> <span class="animated-word">juga</span> <span class="animated-word">terus</span> <span class="animated-word">berusaha</span> <span class="animated-word">mengembangkan</span> <span class="animated-word">diri</span> <span class="animated-word">dan</span> <span class="animated-word">mempersiapkan</span> <span class="animated-word">masa</span> <span class="animated-word">depan</span> <span class="animated-word">yang</span> <span class="animated-word">lebih</span> <span class="animated-word">baik</span> <span class="animated-word">melalui</span> <span class="animated-word">pendidikan.</span>
-     </div>
-    </div><!-- PENDIDIKAN -->
-    <div class="section">
-     <div class="section-title">
-      🎓 Pendidikan
-     </div>
-     <ul class="item-list">
-      <li>
-       <div class="item-title">
-        🏫 SD: SDN 3 GUNUNGLEUTIK
-       </div>
-       <div class="item-subtitle">
-        📅 2014 - 2019
-       </div></li>
-      <li>
-       <div class="item-title">
-        📚 SMP: MTSN 1 BANDUNG
-       </div>
-       <div class="item-subtitle">
-        📅 2020 - 2022
-       </div></li>
-      <li>
-       <div class="item-title">
-        🎒 SMA: SMA KP BALEENDAH
-       </div>
-       <div class="item-subtitle">
-        📅 2023 - 2026
-       </div></li>
-     </ul>
-    </div><!-- KEAHLIAN -->
-    <div class="section">
-     <div class="section-title">
-      ⭐ Keahlian
-     </div>
-     <ul class="item-list">
-      <li>💬 Komunikasi yang cukup baik</li>
-      <li>⏰ Manajemen waktu yang baik</li>
-      <li>🤝 Terlibat dalam kerja sama tim dan kepanitiaan kegiatan</li>
-      <li>👤 Mampu bekerja secara individu maupun dalam tim</li>
-     </ul>
-    </div><!-- PENGALAMAN -->
-    <div class="section">
-     <div class="section-title">
-      💼 Pengalaman
-     </div>
-     <ul class="item-list">
-      <li>
-       <div class="item-title">
-        🥋 Ketua Eskul Karate MTsN 1 Bandung
-       </div>
-       <div class="item-subtitle">
-        2022 - 2023
-       </div></li>
-      <li>
-       <div class="item-title">
-        🎯 OSIS SMA KP BALEENDAH
-       </div>
-       <div class="item-subtitle">
-        2023
-       </div></li>
-      <li>
-       <div class="item-title">
-        📝 Sekertaris Katar 03
-       </div>
-       <div class="item-subtitle">
-        2023 - 2026
-       </div></li>
-     </ul>
-    </div><!-- SERTIFIKAT -->
-    <div class="section">
-     <div class="section-title">
-      🏆 Sertifikat &amp; Penghargaan
-     </div>
-     <div class="tag-container">
-      <div class="tag achievement-tag">
-       🥈 Juara 2 Lomba Puisi
-      </div>
-      <div class="tag achievement-tag">
-       🥉 Juara Harapan 3 Karate
-      </div>
-      <div class="tag achievement-tag">
-       📖 Hafalan Juz 30
-      </div>
-     </div>
-    </div><!-- BAHASA -->
-    <div class="section">
-     <div class="section-title">
-      🗣️ Bahasa
-     </div>
-     <div class="tag-container">
-      <div class="tag language-tag">
-       🇮🇩 Indonesia
-      </div>
-      <div class="tag language-tag">
-       🇬🇧 Bahasa Inggris
-      </div>
-     </div>
-    </div><!-- HOBBY -->
-    <div class="section">
-     <div class="section-title">
-      🎨 Hobi
-     </div>
-     <div class="tag-container">
-      <div class="tag hobby-tag">
-       🍳 Memasak
-      </div>
-      <div class="tag hobby-tag">
-       📺 Menonton
-      </div>
-     </div>
-    </div>
-   </div><!-- FOOTER -->
-   <div class="footer">
-    ✨ CV Salma Sabila - Dibuat dengan Cinta dan CSS yang Lucu 💗 ✨
-   </div>
-  </div>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c86dd5214684717',t:'MTc3MDE3MzQ2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+</div>
+
+</body>
+</html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 </body>
 </html>
