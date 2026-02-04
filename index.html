@@ -1,181 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Salma Sabila</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pangolin&display=swap" rel="stylesheet">
+    <title>CV Salma Sabila - Interaktif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink-soft: #ffdde1;
-            --purple-soft: #ee9ca7;
-            --white: #ffffff;
-            --text-color: #5d5d5d;
-            --accent: #ff8fa3;
+            --primary-pink: #FFC0CB; /* Light Pink */
+            --accent-purple: #DDA0DD; /* Plum/Light Purple */
+            --soft-white: #F8F8FF;   /* Ghost White */
+            --dark-text: #4a4a4a;
+            --light-text: #7b7b7b;
+            --border-color: #ffe4e1; /* Misty Rose */
+            --shadow-color: rgba(221, 160, 221, 0.2); /* Soft purple shadow */
         }
 
         body {
-            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--purple-soft) 100%);
-            font-family: 'Quicksand', sans-serif;
-            color: var(--text-color);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--soft-white) 0%, var(--primary-pink) 100%);
+            color: var(--dark-text);
+            line-height: 1.6;
             display: flex;
             justify-content: center;
-            padding: 20px;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
-        .container {
-            background: var(--white);
-            max-width: 800px;
+        .cv-wrapper {
+            background: var(--soft-white);
+            max-width: 900px;
             width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px var(--shadow-color);
             overflow: hidden;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column; /* Stack sections vertically */
         }
 
-        /* Sidebar Kiri */
-        .sidebar {
-            background: #fff5f7;
-            flex: 1;
-            min-width: 250px;
-            padding: 40px 20px;
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(45deg, var(--primary-pink), var(--accent-purple));
+            color: white;
+            padding: 50px 30px;
             text-align: center;
-            border-right: 2px dashed var(--pink-soft);
-        }
-
-        .profile-img { 
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid var(--accent);
-            object-fit: cover;
+            position: relative;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
             margin-bottom: 20px;
         }
 
-        h1 { font-family: 'Pangolin', cursive; color: var(--accent); margin-bottom: 5px; }
-        .sub-title { font-size: 0.9em; color: #aaa; margin-bottom: 30px; }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--soft-white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
 
-        .contact-info { text-align: left; font-size: 0.85em; }
-        .contact-item { margin-bottom: 15px; display: flex; align-items: center; }
-        .contact-item b { color: var(--accent); margin-right: 5px; }
+        .header-section h1 {
+            font-family: 'Comfortaa', cursive;
+            margin: 0;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
 
-        /* Konten Kanan */
+        .header-section p {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
         .main-content {
-            flex: 2;
-            min-width: 300px;
-            padding: 40px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr; /* Single column layout for better animation flow */
+            gap: 30px;
         }
 
-        section { margin-bottom: 30px; }
-        h2 { 
-            font-family: 'Pangolin', cursive; 
-            border-bottom: 2px solid var(--pink-soft); 
-            display: inline-block;
-            margin-bottom: 15px;
-            color: var(--accent);
+        .cv-section {
+            background: var(--soft-white);
+            padding: 25px 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            opacity: 0; /* Hidden by default for animation */
+            transform: translateY(30px); /* Starts slightly below for animation */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .card {
-            background: #fafafa;
-            padding: 15px;
-            border-radius: 15px;
+        .cv-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cv-section h2 {
+            font-family: 'Comfortaa', cursive;
+            color: var(--accent-purple);
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .cv-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-pink);
+            border-radius: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 0.95em;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: #fffafa;
+            padding: 10px 15px;
+            border-radius: 12px;
+            border: 1px dashed var(--border-color);
+            transition: background 0.2s;
+        }
+        .contact-item:hover {
+            background: #ffe6f0;
+        }
+        .contact-item b {
+            font-size: 1.2em;
+            margin-right: 10px;
+            color: var(--accent-purple);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #fffafa;
             margin-bottom: 10px;
-            transition: transform 0.3s;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-pink);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
         }
-        .card:hover { transform: scale(1.02); }
+        ul li::before {
+            content: '🌸'; /* Cute bullet point */
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
 
-        ul { padding-left: 20px; }
-        li { margin-bottom: 5px; }
-
-        .badge {
-            background: var(--accent);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
+        .skill-badge, .language-badge {
             display: inline-block;
-            margin: 3px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease;
+        }
+        .skill-badge:hover, .language-badge:hover {
+            background: var(--accent-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
+        .hobby-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .hobby-item {
+            background: #ffe6f0;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        /* Footer */
+        .footer-section {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85em;
+            color: var(--light-text);
+            background: #fdf5f6;
+            border-top: 1px solid var(--border-color);
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .cv-section {
+                padding: 20px;
+            }
+            .header-section {
+                padding: 30px 20px;
+            }
+            .header-section h1 {
+                font-size: 2em;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="sidebar">
+<div class="cv-wrapper">
+    <div class="header-section">
         <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Salma Sabila" class="profile-img">
         <h1>Salma Sabila</h1>
-        <p class="sub-title">Pelajar | Tech Enthusiast</p>
-
-        <div class="contact-info">
-            <div class="contact-item"><b>📧</b> salmasabila008@gmail.com</div>
-            <div class="contact-item"><b>📸</b> @sallmmbbila</div>
-            <div class="contact-item"><b>📞</b> 082115194018</div>
-            <div class="contact-item"><b>📍</b> Ciparay, Bandung</div>
-        </div>
-
-        <br>
-        <h2>Hobby</h2>
-        <p>🍳 Memasak <br> 🎬 Menonton</p>
+        <p>Pelajar | Calon Developer Berbakat</p>
     </div>
 
     <div class="main-content">
-        <section>
+        <section class="cv-section" id="about">
             <h2>Tentang Saya</h2>
-            <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya terus berusaha mengembangkan diri untuk masa depan yang lebih baik.</p>
+            <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.</p>
         </section>
 
-        <section>
+        <section class="cv-section" id="contact">
+            <h2>Info Kontak</h2>
+            <div class="contact-grid">
+                <div class="contact-item"><b>📧</b> salmasalsabila008@gmail.com</div>
+                <div class="contact-item"><b>📸</b> @sallmmbbila</div>
+                <div class="contact-item"><b>📞</b> 082115194018</div>
+                <div class="contact-item"><b>📍</b> Ciparay, Bandung</div>
+                <div class="contact-item"><b>🎂</b> 2008</div>
+            </div>
+        </section>
+
+        <section class="cv-section" id="education">
             <h2>Pendidikan</h2>
-            <div class="card">
-                <strong>SMA KP BALEENDAH</strong> (2023 - 2026)
-            </div>
-            <div class="card">
-                <strong>MTsN 1 BANDUNG</strong> (2020 - 2022)
-            </div>
-            <div class="card">
-                <strong>SDN 3 GUNUNGLEUTIK</strong> (2014 - 2019)
-            </div>
+            <ul>
+                <li><strong>SMA KP BALEENDAH</strong> (2023-2026)</li>
+                <li><strong>MTsN 1 BANDUNG</strong> (2020-2022)</li>
+                <li><strong>SDN 3 GUNUNGLEUTIK</strong> (2014-2019)</li>
+            </ul>
         </section>
 
-        <section>
+        <section class="cv-section" id="experience">
             <h2>Pengalaman</h2>
             <ul>
                 <li><strong>Ketua Eskul Karate</strong> - MTsN 1 Bandung (2022-2023)</li>
-                <li><strong>Anggota OSIS</strong> - SMA KP Baleendah (2023)</li>
+                <li><strong>Anggota OSIS</strong> - SMA KP BALEENDAH (2023)</li>
                 <li><strong>Sekretaris Katar 03</strong> (2023-2026)</li>
             </ul>
         </section>
 
-        <section>
+        <section class="cv-section" id="skills-certs">
             <h2>Keahlian & Sertifikat</h2>
             <div>
-                <span class="badge">Komunikasi</span>
-                <span class="badge">Manajemen Waktu</span>
-                <span class="badge">Teamwork</span>
-                <span class="badge">Juara 2 Puisi</span>
-                <span class="badge">Juara Harapan 3 Karate</span>
-                <span class="badge">Hafalan Juz 30</span>
+                <span class="skill-badge">Komunikasi yang Baik</span>
+                <span class="skill-badge">Manajemen Waktu</span>
+                <span class="skill-badge">Kerja Sama Tim</span>
+                <span class="skill-badge">Bekerja Individu/Tim</span>
+                <span class="skill-badge">Lomba Puisi Juara 2</span>
+                <span class="skill-badge">Lomba Karate Juara Harapan 3</span>
+                <span class="skill-badge">Hafalan Juz 30</span>
             </div>
         </section>
 
-        <section>
+        <section class="cv-section" id="languages">
             <h2>Bahasa</h2>
-            <p>🇮🇩 Indonesia (Aktif) | 🇬🇧 Inggris (Pasif)</p>
+            <span class="language-badge">🇮🇩 Bahasa Indonesia (Aktif)</span>
+            <span class="language-badge">🇬🇧 Bahasa Inggris (Pasif)</span>
         </section>
+
+        <section class="cv-section" id="hobbies">
+            <h2>Hobby</h2>
+            <div class="hobby-list">
+                <span class="hobby-item">🍳 Memasak</span>
+                <span class="hobby-item">🎬 Menonton Film/Drama</span>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer-section">
+        Dibuat dengan 💖 oleh Salma Sabila | Tahun Lahir: 2008
     </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.cv-section');
+
+        const observerOptions = {
+            root: null, /* Use the viewport as the root */
+            rootMargin: '0px',
+            threshold: 0.2 /* Trigger when 20% of the section is visible */
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
 </body>
-</html>
+</html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 </body>
 </html>
