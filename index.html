@@ -1,184 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<!doctype html>
-<html lang="id" class="h-full">
- <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Salma Sabila</title>
-  <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Salma Sabila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pangolin&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-soft: #ffdde1;
+            --purple-soft: #ee9ca7;
+            --white: #ffffff;
+            --text-color: #5d5d5d;
+            --accent: #ff8fa3;
         }
 
         body {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
-            background: linear-gradient(135deg, #ffc1e3 0%, #ffd4e5 50%, #ffe5ec 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-            color: #333;
-        }
-
-        .cv-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            overflow: hidden;
-            animation: slideIn 0.8s ease-out;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .header {
-            background: linear-gradient(135deg, #ffb3d9 0%, #ffc9e3 100%);
-            padding: 50px 40px;
-            text-align: center;
-            position: relative;
-        }
-
-        .profile-image-container {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .profile-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-name {
-            color: white;
-            font-size: 42px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .content { padding: 40px; }
-
-        .section-title {
-            font-size: 26px;
-            color: #ff99cc;
-            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--purple-soft) 100%);
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
             display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px dashed #ffe5f0;
-            padding-bottom: 5px;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
+        .container {
+            background: var(--white);
+            max-width: 800px;
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .info-card {
-            background: #fff5f9;
+        /* Sidebar Kiri */
+        .sidebar {
+            background: #fff5f7;
+            flex: 1;
+            min-width: 250px;
+            padding: 40px 20px;
+            text-align: center;
+            border-right: 2px dashed var(--pink-soft);
+        }
+
+        .profile-img { 
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-family: 'Pangolin', cursive; color: var(--accent); margin-bottom: 5px; }
+        .sub-title { font-size: 0.9em; color: #aaa; margin-bottom: 30px; }
+
+        .contact-info { text-align: left; font-size: 0.85em; }
+        .contact-item { margin-bottom: 15px; display: flex; align-items: center; }
+        .contact-item b { color: var(--accent); margin-right: 5px; }
+
+        /* Konten Kanan */
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        section { margin-bottom: 30px; }
+        h2 { 
+            font-family: 'Pangolin', cursive; 
+            border-bottom: 2px solid var(--pink-soft); 
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .card {
+            background: #fafafa;
             padding: 15px;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
         }
+        .card:hover { transform: scale(1.02); }
 
-        .timeline-item {
-            border-left: 4px solid #ff99cc;
-            padding: 10px 20px;
-            margin-bottom: 15px;
-            background: #fff;
-        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
 
-        .skill-badge {
-            display: inline-block;
-            background: #ffe5f0;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-weight: bold;
-        }
-
-        .footer {
-            background: #ffb3d9;
+        .badge {
+            background: var(--accent);
             color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 16px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin: 3px;
         }
-  </style>
- </head>
- <body>
-  <div class="cv-container">
-    <div class="header">
-      <div class="profile-image-container">
-        <img src="https://r.jina.ai/i/6f906f363c4a4507bd3f707449bc27a9" alt="Foto Profil Salma Sabila">
-      </div>
-      <h1 class="profile-name">Salma Sabila</h1>
-      <p style="color: white; opacity: 0.9;">Pelajar Berprestasi & Penuh Semangat</p>
-    </div>
 
-    <div class="content">
-      <div class="section-title">📞 Kontak</div>
-      <div class="info-grid">
-        <div class="info-card">📧 salmasalsabilla0880@gmail.com</div>
-        <div class="info-card">📱 081324151678</div>
-        <div class="info-card">📸 @sallmmbbila</div>
-        <div class="info-card">🏠 Ciparay, Bandung</div>
-      </div>
-
-      <div class="section-title">💫 Tentang Saya</div>
-      <p style="line-height: 1.6; margin-bottom: 30px;">
-        Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya juga terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.
-      </p>
-
-      <div class="section-title">🎓 Pendidikan</div>
-      <div class="timeline-item">
-        <strong>SMA KP BALEENDAH</strong><br>2023 - 2026
-      </div>
-      <div class="timeline-item">
-        <strong>MTsN 1 BANDUNG</strong><br>2020 - 2022
-      </div>
-
-      <div class="section-title">🏆 Prestasi</div>
-      <div style="margin-bottom: 30px;">
-        <span class="skill-badge">🥈 Juara 2 Lomba Puisi</span>
-        <span class="skill-badge">🥋 Lomba Karate Harapan 3</span>
-        <span class="skill-badge">📖 Hafalan Juz 30</span>
-      </div>
-
-      <div class="section-title">💼 Organisasi</div>
-      <div class="timeline-item">
-        <strong>Ketua Ekstrakurikuler Karate</strong> (MTsN 1 Bandung)
-      </div>
-      <div class="timeline-item">
-        <strong>Sekretaris Katar 03</strong> (2023 - 2026)
-      </div>
-    </div>
-
-    <div class="footer">
-      ✨ Terima kasih telah melihat CV saya! ✨
-    </div>
-  </div>
- </body>
-</html>, initial-scale=1.0">
-    <title>Document</title>
+    </style>
 </head>
 <body>
-    
+
+<div class="container">
+    <div class="sidebar">
+        <img src="WhatsApp Image 2026-01-29 at 11.17.04.jpeg" alt="Salma Sabila" class="profile-img">
+        <h1>Salma Sabila</h1>
+        <p class="sub-title">Pelajar | Tech Enthusiast</p>
+
+        <div class="contact-info">
+            <div class="contact-item"><b>📧</b> salmasalsabilla0880@gmail.com</div>
+            <div class="contact-item"><b>📸</b> @sallmmbbila</div>
+            <div class="contact-item"><b>📞</b> 081324151678</div>
+            <div class="contact-item"><b>📍</b> Ciparay, Bandung</div>
+        </div>
+
+        <br>
+        <h2>Hobby</h2>
+        <p>🍳 Memasak <br> 🎬 Menonton</p>
+    </div>
+
+    <div class="main-content">
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya terus berusaha mengembangkan diri untuk masa depan yang lebih baik.</p>
+        </section>
+
+        <section>
+            <h2>Pendidikan</h2>
+            <div class="card">
+                <strong>SMA KP BALEENDAH</strong> (2023 - 2026)
+            </div>
+            <div class="card">
+                <strong>MTsN 1 BANDUNG</strong> (2020 - 2022)
+            </div>
+            <div class="card">
+                <strong>SDN 3 GUNUNGLEUTIK</strong> (2014 - 2019)
+            </div>
+        </section>
+
+        <section>
+            <h2>Pengalaman</h2>
+            <ul>
+                <li><strong>Ketua Eskul Karate</strong> - MTsN 1 Bandung (2022-2023)</li>
+                <li><strong>Anggota OSIS</strong> - SMA KP Baleendah (2023)</li>
+                <li><strong>Sekretaris Katar 03</strong> (2023-2026)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Keahlian & Sertifikat</h2>
+            <div>
+                <span class="badge">Komunikasi</span>
+                <span class="badge">Manajemen Waktu</span>
+                <span class="badge">Teamwork</span>
+                <span class="badge">Juara 2 Puisi</span>
+                <span class="badge">Juara Harapan 3 Karate</span>
+                <span class="badge">Hafalan Juz 30</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Bahasa</h2>
+            <p>🇮🇩 Indonesia (Aktif) | 🇬🇧 Inggris (Pasif)</p>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
 </body>
 </html>
