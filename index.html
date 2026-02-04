@@ -11,311 +11,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salma Sabila - Creative CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <title>Poster CV Salma Sabila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --main-pink: #ffafcc;
-            --dark-pink: #fb6f92;
-            --soft-pink: #ffc2d1;
+            --pink-dark: #fb6f92;
+            --pink-medium: #ff85a1;
+            --pink-light: #ffb1bd;
+            --pink-soft: #ffe5ec;
             --white: #ffffff;
-            --text: #4a4a4a;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Comfortaa', cursive;
         }
 
         body {
-            background: #fff5f8;
-            color: var(--text);
-            overflow-x: hidden;
+            background-color: var(--pink-soft);
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
         }
 
-        /* Ornamen Latar Belakang Bergerak */
-        .bg-circle {
+        /* Elemen Kurva Latar Belakang */
+        .wave-bg {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-            background: var(--soft-pink);
+            background: var(--pink-soft);
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            background: linear-gradient(135deg, var(--pink-light), var(--pink-medium));
+            filter: blur(40px);
             border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.5;
-            animation: move 10s infinite alternate;
+            animation: moveBlob 15s infinite alternate ease-in-out;
+            opacity: 0.6;
         }
 
-        @keyframes move {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100px, 100px); }
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(100px, 50px) scale(1.2); }
+            100% { transform: translate(-50px, 150px) scale(0.8); }
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 30px;
-        }
-
-        /* Sidebar (Sticky Glass) */
-        .sidebar {
-            background: rgba(255, 255, 255, 0.7);
+        /* Container Utama Poster */
+        .poster-cv {
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 50px;
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-            border: 2px solid var(--white);
-            box-shadow: 0 10px 30px rgba(251, 111, 146, 0.1);
-            text-align: center;
+            width: 100%;
+            max-width: 850px;
+            min-height: 1100px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(251, 111, 146, 0.3);
+            border: 8px solid var(--white);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: posterEntry 1.2s ease-out;
+        }
+
+        @keyframes posterEntry {
+            from { opacity: 0; transform: translateY(100px) rotate(2deg); }
+            to { opacity: 1; transform: translateY(0) rotate(0deg); }
+        }
+
+        /* Header Poster dengan Kurva */
+        .header-poster {
+            background: var(--pink-dark);
+            height: 350px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            color: var(--white);
+            clip-path: ellipse(120% 100% at 50% 0%); /* Efek Kurva Atas */
+        }
+
+        .profile-wrapper {
+            position: relative;
+            z-index: 2;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 40px; /* Bentuk Squircle */
+            width: 180px;
+            height: 180px;
+            border-radius: 50% 50% 10% 50%; /* Kurva Unik */
+            border: 8px solid var(--white);
             object-fit: cover;
-            border: 5px solid var(--main-pink);
-            margin-bottom: 20px;
-            transform: rotate(-5deg);
             transition: 0.5s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .profile-img:hover {
-            transform: rotate(0deg) scale(1.1);
+            transform: scale(1.1) rotate(5deg);
+            border-radius: 50%;
         }
 
-        .contact-info {
-            margin-top: 30px;
-            text-align: left;
-            font-size: 0.85rem;
+        .header-text {
+            margin-left: 30px;
         }
 
-        .contact-info div {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: var(--white);
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .contact-info div:hover {
-            background: var(--main-pink);
-            color: white;
-            transform: translateX(10px);
-        }
-
-        /* Main Content */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .hero-card {
-            background: linear-gradient(135deg, var(--main-pink), var(--dark-pink));
-            padding: 50px;
-            border-radius: 60px 60px 60px 5px;
-            color: white;
-            box-shadow: 0 20px 40px rgba(251, 111, 146, 0.3);
-        }
-
-        .hero-card h1 {
+        .header-text h1 {
             font-family: 'Fredoka', sans-serif;
             font-size: 3.5rem;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1;
         }
 
-        .section-bubble {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-            border: 2px solid transparent;
+        .header-text p {
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        /* Konten Grid */
+        .content-body {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            padding: 40px;
+            gap: 40px;
+            flex-grow: 1;
+        }
+
+        .section {
+            margin-bottom: 30px;
             transition: 0.4s;
-            position: relative;
         }
 
-        .section-bubble:hover {
-            border-color: var(--main-pink);
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(251, 111, 146, 0.15);
+        .section:hover {
+            transform: scale(1.03);
         }
 
-        .section-bubble h3 {
-            color: var(--dark-pink);
-            margin-bottom: 15px;
+        h3 {
             font-family: 'Fredoka', sans-serif;
+            color: var(--pink-dark);
             font-size: 1.5rem;
+            border-bottom: 4px solid var(--pink-light);
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
-        /* Keahlian & Bahasa Labels */
-        .tag-container {
+        .about-box {
+            background: var(--pink-soft);
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            border-left: 5px solid var(--pink-dark);
+        }
+
+        /* List Items */
+        .list-item {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .list-item::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--pink-dark);
+        }
+
+        .list-item b { color: var(--pink-dark); font-size: 0.9rem; }
+        .list-item p { font-size: 0.8rem; }
+
+        /* Skill & Bahasa Tags */
+        .tag-cloud {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
         .tag {
-            background: #fff0f3;
-            color: var(--dark-pink);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border: 1px solid var(--soft-pink);
-            animation: floatTag 3s infinite alternate;
-        }
-
-        @keyframes floatTag {
-            from { transform: translateY(0); }
-            to { transform: translateY(-5px); }
-        }
-
-        /* Hobby Section */
-        .hobby-grid {
-            display: flex;
-            gap: 20px;
-        }
-
-        .hobby-card {
-            flex: 1;
-            background: #fff;
-            padding: 20px;
-            border-radius: 30px;
-            text-align: center;
-            border: 2px dashed var(--main-pink);
+            background: var(--white);
+            border: 2px solid var(--pink-medium);
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--pink-dark);
             transition: 0.3s;
         }
 
-        .hobby-card:hover {
-            background: var(--dark-pink);
+        .tag:hover {
+            background: var(--pink-dark);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.4);
+        }
+
+        /* Footer Poster */
+        .footer-poster {
+            background: #2d3436;
             color: white;
-            border-style: solid;
+            padding: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 50px 50px 0 0;
+            font-size: 0.8rem;
         }
 
-        /* Timeline style for Education & Exp */
-        .list-item {
-            padding: 15px;
-            border-left: 4px solid var(--main-pink);
-            margin-bottom: 10px;
-            background: rgba(255, 175, 204, 0.05);
-            border-radius: 0 20px 20px 0;
-        }
+        .contact-item { text-align: center; }
+        .contact-item b { display: block; color: var(--pink-light); }
 
-        /* Responsive */
-        @media (max-width: 850px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { position: relative; top: 0; }
-            .hero-card h1 { font-size: 2.5rem; }
+        @media (max-width: 768px) {
+            .content-body { grid-template-columns: 1fr; }
+            .header-poster { height: auto; flex-direction: column; text-align: center; padding-top: 60px; }
+            .header-text { margin-left: 0; margin-top: 20px; }
+            .header-text h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-circle" style="width: 300px; height: 300px; top: -50px; left: -50px;"></div>
-    <div class="bg-circle" style="width: 200px; height: 200px; bottom: 50px; right: 50px; background: #bde0fe;"></div>
+    <div class="wave-bg">
+        <div class="blob" style="width: 400px; height: 400px; top: -100px; right: -100px;"></div>
+        <div class="blob" style="width: 300px; height: 300px; bottom: -50px; left: -50px; background: #bde0fe;"></div>
+    </div>
 
-    <div class="container">
-        <aside class="sidebar">
-            <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Salma Sabila" class="profile-img">
-            <h2 style="font-family: 'Fredoka';">Salma Sabila</h2>
-            <p style="color: var(--dark-pink); font-weight: bold;">Lahir Tahun 2008</p>
-            
-            <div class="contact-info">
-                <div>📧 salmasabila008@gmail.com</div>
-                <div>📸 @sallmmbbila</div>
-                <div>📞 082115194018</div>
-                <div>📍 Ciparay, Bandung</div>
+    <div class="poster-cv">
+        <header class="header-poster">
+            <div class="profile-wrapper">
+                <img src="WhatsApp Image 2026-02-04 at 08.07.52 (1).jpeg" alt="Salma Sabila" class="profile-img">
             </div>
-        </aside>
+            <div class="header-text">
+                <h1>Salma<br>Sabila</h1>
+                <p>TEKNOLOGI & PENDIDIKAN ENTHUSIAST</p>
+                <div style="margin-top: 10px; font-size: 0.9rem;">Lahir: 2008 | Ciparay, Bandung</div>
+            </div>
+        </header>
 
-        <main class="main-content">
-            <section class="hero-card">
-                <h1>Hi! I'm Salma</h1>
-                <p>Saya pribadi yang tekun dan memiliki rasa ingin tahu tinggi dalam dunia pendidikan serta teknologi. Percaya bahwa teknologi adalah jembatan masa depan!</p>
-            </section>
-
-            <section class="section-bubble">
-                <h3>🛠️ Keahlian</h3>
-                <div class="tag-container">
-                    <span class="tag">Komunikasi Baik</span>
-                    <span class="tag">Manajemen Waktu</span>
-                    <span class="tag">Kerja Tim</span>
-                    <span class="tag">Individu</span>
-                    <span class="tag">Kepanitiaan</span>
-                </div>
-            </section>
-
-            <section class="section-bubble">
-                <h3>💼 Pengalaman</h3>
-                <div class="list-item">
-                    <b>Sekertaris Katar 03</b> <br>
-                    <small>2023 - 2026</small>
-                </div>
-                <div class="list-item">
-                    <b>Osis SMA KP Baleendah</b> <br>
-                    <small>2023</small>
-                </div>
-                <div class="list-item">
-                    <b>Ketua Ekskul Karate</b> <br>
-                    <small>MTsN 1 Bandung (2022-2023)</small>
-                </div>
-            </section>
-
-            <section class="section-bubble">
-                <h3>🎓 Pendidikan</h3>
-                <div class="list-item">
-                    <b>SMA KP Baleendah</b> <br>
-                    <small>2023 - 2026</small>
-                </div>
-                <div class="list-item">
-                    <b>MTSN 1 Bandung</b> <br>
-                    <small>2020 - 2022</small>
-                </div>
-                <div class="list-item">
-                    <b>SDN 3 Gunungleutik</b> <br>
-                    <small>2014 - 2019</small>
-                </div>
-            </section>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <section class="section-bubble">
-                    <h3>🏆 Prestasi</h3>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li>✨ Juara 2 Lomba Puisi</li>
-                        <li>✨ Juara Harapan 3 Karate</li>
-                        <li>✨ Hafalan Juz 30</li>
-                    </ul>
-                </section>
-
-                <section class="section-bubble">
-                    <h3>🗣️ Bahasa</h3>
-                    <div class="tag-container">
-                        <span class="tag" style="background: white;">Indonesia</span>
-                        <span class="tag" style="background: white;">English</span>
+        <div class="content-body">
+            <div class="col-left">
+                <div class="section">
+                    <h3>Tentang Saya</h3>
+                    <div class="about-box">
+                        Saya pribadi yang tekun dan memiliki rasa ingin tahu tinggi. Saya percaya persiapan masa depan dimulai dengan keberanian untuk terus berevolusi melalui ilmu pengetahuan.
                     </div>
-                </section>
+                </div>
+
+                <div class="section">
+                    <h3>Pendidikan</h3>
+                    <div class="list-item">
+                        <b>SMA KP BALEENDAH</b>
+                        <p>2023 - 2026</p>
+                    </div>
+                    <div class="list-item">
+                        <b>MTSN 1 BANDUNG</b>
+                        <p>2020 - 2022</p>
+                    </div>
+                    <div class="list-item">
+                        <b>SDN 3 GUNUNGLEUTIK</b>
+                        <p>2014 - 2019</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Bahasa</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">INDONESIA</span>
+                        <span class="tag">ENGLISH</span>
+                    </div>
+                </div>
             </div>
 
-            <section class="section-bubble">
-                <h3>🍕 Hobi</h3>
-                <div class="hobby-grid">
-                    <div class="hobby-card">
-                        <span style="font-size: 2rem;">🍳</span>
-                        <p>Memasak</p>
+            <div class="col-right">
+                <div class="section">
+                    <h3>Pengalaman</h3>
+                    <div class="list-item">
+                        <b>SEKRETARIS KATAR 03</b>
+                        <p>2023 - 2026 (Aktif)</p>
                     </div>
-                    <div class="hobby-card">
-                        <span style="font-size: 2rem;">🍿</span>
-                        <p>Menonton</p>
+                    <div class="list-item">
+                        <b>OSIS SMA KP BALEENDAH</b>
+                        <p>Tahun 2023</p>
+                    </div>
+                    <div class="list-item">
+                        <b>KETUA EKSKUL KARATE</b>
+                        <p>MTsN 1 Bandung (2022-2023)</p>
                     </div>
                 </div>
-            </section>
-        </main>
+
+                <div class="section">
+                    <h3>Keahlian</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">COMMUNICATION</span>
+                        <span class="tag">TIME MANAGEMENT</span>
+                        <span class="tag">TEAM WORK</span>
+                        <span class="tag">LEADERSHIP</span>
+                        <span class="tag">INDIVIDUAL TASK</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Prestasi</h3>
+                    <div class="list-item">
+                        <b>JUARA 2 LOMBA PUISI</b>
+                    </div>
+                    <div class="list-item">
+                        <b>JUARA HARAPAN 3 KARATE</b>
+                    </div>
+                    <div class="list-item">
+                        <b>HAFALAN JUZ 30</b>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Hobby</h3>
+                    <div class="tag-cloud">
+                        <span class="tag" style="border-style: dashed;">🍳 MEMASAK</span>
+                        <span class="tag" style="border-style: dashed;">🍿 MENONTON</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-poster">
+            <div class="contact-item">
+                <b>EMAIL</b>
+                salmasabila008@gmail.com
+            </div>
+            <div class="contact-item">
+                <b>INSTAGRAM</b>
+                @sallmmbbila
+            </div>
+            <div class="contact-item">
+                <b>WHATSAPP</b>
+                082115194018
+            </div>
+        </footer>
     </div>
 
 </body>
