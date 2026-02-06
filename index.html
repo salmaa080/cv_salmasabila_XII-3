@@ -76,7 +76,7 @@
         .profile-img {
             width: 160px;
             height: 160px;
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; /* Bentuk Bulat Lucu */
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
             border: 5px solid var(--pink-bold);
             object-fit: cover;
             box-shadow: 0 0 20px rgba(255, 117, 143, 0.4);
@@ -126,7 +126,7 @@
             color: var(--pink-bold);
         }
 
-        /* --- PENDIDIKAN: LINE CHART STYLE --- */
+        /* Pendidikan Estetik */
         .line-chart {
             padding-left: 15px;
             border-left: 3px dotted var(--pink-medium);
@@ -152,7 +152,7 @@
             box-shadow: 0 0 8px var(--pink-bold);
         }
 
-        /* --- KEAHLIAN: PIE CHART STYLE --- */
+        /* Keahlian / Charts */
         .skill-pies {
             display: flex;
             justify-content: space-around;
@@ -187,7 +187,7 @@
             border-radius: 50%;
         }
 
-        /* --- PRESTASI & HOBI --- */
+        /* Tags */
         .tag-list {
             display: flex;
             flex-wrap: wrap;
@@ -204,7 +204,7 @@
             border: 1px solid var(--white);
         }
 
-        /* Footer */
+        /* Footer Aktif (Dapat Diklik) */
         footer {
             padding: 30px;
             text-align: center;
@@ -212,14 +212,30 @@
             border-top: 2px dashed var(--pink-medium);
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
             font-size: 0.85rem;
             font-weight: 600;
         }
 
+        footer a {
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer a:hover {
+            color: var(--pink-bold);
+            transform: scale(1.05);
+        }
+
         @media (max-width: 750px) {
             .content-grid { grid-template-columns: 1fr; }
             header h1 { font-size: 2rem; }
+            footer { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -312,9 +328,17 @@
     </div>
 
     <footer>
-        <div>💌 salmasabila008@gmail.com</div>
-        <div>📸 @salmaaabilaa</div>
-        <div>📞 082115194018</div>
+        <a href="mailto:salmasabila008@gmail.com">
+            💌 salmasabila008@gmail.com
+        </a>
+        
+        <a href="https://www.instagram.com/salmaaabilaa" target="_blank">
+            📸 @salmaaabilaa
+        </a>
+        
+        <a href="https://wa.me/6282115194018" target="_blank">
+            📞 082115194018
+        </a>
     </footer>
 </div>
 
